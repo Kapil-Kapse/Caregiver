@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Caregiver</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montez&family=Montserrat&family=Sacramento&family=VT323&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <h3 class="Main_Heading">Caregiver</h3>
+
+
+    <div class="nav_bar" >
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#Reminder">Medicine and Task Reminder</a></li>
+        <li><a href="contact.html">Caregiver Daily Checklist</a></li>
+        <li><a href="#Companionship">Fun Activities & Companionship</a></li>
+        <li><a href="feedback.html">Contact Us</a></li>
+      </ul>
+    </div>
+
+
+
+    <div class="parent_div">
+          <div class="main_div">
+              <div id="myDIV" class="header">
+                <h2 class="Med_Rem_Heading" id="Reminder" style="margin:5px">Medicine Reminder</h2>
+                <input type="text" id="myInput" placeholder="Title...">
+                <span onclick="newElement()" class="addBtn">Add any medicine/activity</span>
+              </div>
+          <ul id="myUL">
+              <li class="checked">Morning walk</li>
+              <li>Aspirin 100mg 1 tab Once daily morning</li>
+              <li>Paracetamol 500mg 1 tab daily night</li>
+              <li>Read a book</li>
+              <li>Call Sushila for a tea party</li>
+              <li>Antacid 10mg 1 tab Once daily morning</li>
+              <li>Antihistamine 25mg 1 tab Once daily for 3 days (Monday-day 1)</li>
+          </ul>
+
+
+        <script>
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
+        var i;
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+
+
+        // Add a "checked" symbol when clicking on a list item
+        var list = document.querySelector('ul');
+        list.addEventListener('click', function(ev) {
+          if (ev.target.tagName === 'li') {
+            ev.target.classList.toggle('checked');
+          }
+        }, false);
+
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+          var li = document.createElement("LI");
+          var inputValue = document.getElementById("myInput").value;
+          var t = document.createTextNode(inputValue);
+          li.appendChild(t);
+          if (inputValue === '') {
+            alert("You must write something!");
+          } else {
+            document.getElementById("myUL").appendChild(li);
+          }
+          document.getElementById("myInput").value = "";
+
+          var span = document.createElement("SPAN");
+          var txt = document.createTextNode("\u00D7");
+          span.className = "close";
+          span.appendChild(txt);
+          li.appendChild(span);
+
+          for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+              var div = this.parentElement;
+              div.style.display = "none";
+            }
+          }
+        }
+        </script>
+
+        </div>
+    </div>
+
+
+    <div class="checklist" id="checklist_nav">
+          <h4><a href="contact.html">Caregiver Daily Checklist</a></h4>
+          <p class="intro">Many people find themselves taking on an unplanned caregiving role for themselves or their loved ones.Tending to the health and well-being of someone who needs help with daily tasks and activities due to an illness, limited mobility, memory issues, or chronic conditions that make everyday chores more challenging. While everyone’s needs are unique, a daily checklist can help to stay organized and ensure the best in-home medical care.</p>
+    </div>
+
+    <div class="top-container" id="Companionship">
+          <h2 class="lonely_Heading_main">Fun Activities & Companionship</h3>
+          <h3 class="lonely_Heading">Hello Sunita, Are you feeling lonely?</h3>
+
+
+          <div class="lonely_soln_friends_family">
+            <img class="friends_and_family" src="images\joy_connect_with_friends_and_family.jpg" alt="joy_connecting_with_friends_and_family">
+            <h3>▶️Talk with friends and family</h3>
+            <h4><a href="https://www.facebook.com/events/748627092835361/748627102835360/">Invite your friends on facebook for a small tea party or get together.</a></h4>
+            <h4><a href="https://web.whatsapp.com/">Call or chat with family members on WhatsApp.</a></h4>
+
+
+          </div>
+
+        <div class="lonely_soln_exercise">
+            <img class="exercise_meditation" src="images\exe_med.jpg" alt="exercise_meditation">
+            <h3>▶️ Time for exercise and meditation:</h3>
+            <h4><a href="https://www.headspace.com/mindfulness">Lets do some mindful meditation.</a></h4>
+            <h4><a href="https://www.forbes.com/health/healthy-aging/best-exercises-for-seniors/">Lets look at a guide to the best exercises.</a></h4>
+
+        </div>
+
+        <div class="lonely_soln_surf_internet">
+            <img class="surf_internet" src="images\chess.jpg" alt="surf_internet">
+            <h3>▶️Surf the internet or play online games with friends and loved ones.</h3>
+            <h4 class="games"><a href="https://www.chess.com/">play online chess</a></h4>
+            <h4 class="games"><a href="https://www.jigsawexplorer.com/multiplayer-jigsaw-puzzle-games/">solve jigsaw puzzles</a></h4>
+            <h4><a href="https://www.youtube.com/">Lets watch your favorite YouTube videos.</a></h4>
+            <h4><a href="https://trends.google.com/trends/trendingsearches/daily?geo=IN">Let's check what's trending on google</a></h4>
+        </div>
+
+
+    </div>
+
+
+    <div class="bottom-container" id="bottom-container_nav">
+            <p class="footer-link">Let us know how we can improve your Caregiver Website experience.  </p>
+            <h4 class="footer-link" ><a href="feedback.html">Click here to give feedback.</a></h4>
+
+            <a class="footer-link" href="https://www.linkedin.com/in/kapil-kapse-410635215/">LinkedIn</a>
+            <a class="footer-link" href="https://github.com/Kapil-Kapse">github</a>
+            <a class="footer-link" href="https://kapil-kapse.github.io/cv/">Website</a>
+            <p class="copyright">© 2022  Made for Sunita Sharma by Kapil Kapse |  All Rights Reserved  </p>
+    </div>
+
+  </body>
+
+
+
+</html>
